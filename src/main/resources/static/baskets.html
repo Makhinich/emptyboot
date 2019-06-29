@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baskets</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h3>Test App. Simple frontend, just fot testing.</h3>
+    <ul>
+        <li><a href="baskets.html">baskets</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>ALL BASKETS</h2>
+    <button id="allBasketsButton">Get All Baskets</button>
+
+    <p>Response:</p>
+    <p id="allBaskets"></p>
+
+    <script>
+    $(function() {
+        $("#allBasketsButton").click( function()
+            {
+                $.ajax({
+                    url: "/baskets",
+                    type: "get"
+                }).then(function(data) {
+                    $('#allBaskets').replaceWith(JSON.stringify(data, null, "\t"));
+                });
+            }
+        );
+    });
+    </script>
+
+</body>
+</html>

@@ -1,20 +1,30 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Getting Started: Serving Web Content</title>
+        <title>App</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 
     <body>
-        <p>Get your greeting <a href="/greeting">here</a></p>
+        <form action="/greeting">
+            Name:
+            <input type="text" name="firstname"><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <br>
+        <!--<form action="baskets.html">-->
+        <!--<br>-->
+        <!--<input type="submit" value="baskets">-->
+        <!--</form>-->
+
+        <h3>Test App. Simple frontend, just fot testing.</h3>
+        <ul>
+            <li><a href="baskets.html">baskets</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
     </body>
-
-
-    <form action="/greeting">
-        Name:<br>
-        <input type="text" name="firstname"><br>
-        <input type="submit" value="Submit">
-
-    </form>
 
 </html>

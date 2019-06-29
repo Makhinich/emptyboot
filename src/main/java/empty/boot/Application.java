@@ -4,15 +4,17 @@ import empty.boot.entity.Basket;
 import empty.boot.entity.Egg;
 import empty.boot.repository.BasketRepository;
 import empty.boot.repository.EggRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.Arrays;
-
 @SpringBootApplication
 public class Application {
+
+    private static final Logger logger = LoggerFactory.getLogger(java.lang.invoke.MethodHandles.lookup().lookupClass());
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -47,10 +49,7 @@ public class Application {
             Egg egg3 = new Egg().setColor("egg3").setSize(4).setBasket(basket2);
             eggRepository.save(egg3);
 
-            System.out.println("Success !!!!!!!!!!!!!!!!!!!!!!!!");
-
-//            Collection<User> users = userRepository.findAll();
-//            users.forEach(System.out::println);
+            logger.info("App successfully started !!!");
         };
     }
 }
